@@ -18,19 +18,19 @@ class _LoginState extends State<Login> {
       children: [
         Image.asset("assets/images/arum.png"),
           TextFormField(
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
             labelText: 'Email Address',
           )),
           TextFormField(
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
             labelText: 'Password',
           )),
           TextButton(
-            child: Text("Login"),
+            child: const Text("Login"),
             onPressed: () {},
           ),
           TextButton(
-            child: Text("Register"),
+            child: const Text("Register"),
             onPressed: () {
               Navigator.push(context,MaterialPageRoute(builder: (context){
                 return Register();
