@@ -9,6 +9,12 @@ class Register extends StatefulWidget {
 }
 
 class _RegisterState extends State<Register> {
+  final formkey = GlobalKey<FormState>();
+
+  //controller
+  final emailController = TextEditingController();
+  final passwordController = TextEditingController();
+  final confirmPasswordController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -18,24 +24,34 @@ class _RegisterState extends State<Register> {
         body: Padding(
           padding: const EdgeInsets.all(40),
           child: Form(
+            key: formkey,
             child: Column(
               children: [
                 TextFormField(
-                    decoration: InputDecoration(
-                  labelText: 'Email Address',
-                )),
+                  decoration: InputDecoration(
+                    labelText: 'Email Address',
+                  ),
+                  controller: emailController,
+                ),
                 TextFormField(
-                    decoration: InputDecoration(
-                  labelText: 'Password',
-                )),
+                  decoration: InputDecoration(
+                    labelText: 'Password',
+                  ),
+                  controller: passwordController,
+                ),
                 TextFormField(
-                    decoration: InputDecoration(
-                  labelText: 'Confirm Password',
-                )),
+                  decoration: InputDecoration(
+                    labelText: 'Confirm Password',
+                  ),
+                  controller: confirmPasswordController,
+                ),
                 TextButton(
                   child: Text("Confirm"),
-                  onPressed: () {},
-                  
+                  onPressed: () {
+                    print(emailController.text);
+                    print(passwordController.text);
+                    print(confirmPasswordController.text);
+                  },
                 )
               ],
             ),
